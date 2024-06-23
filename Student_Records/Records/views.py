@@ -4,5 +4,5 @@ from .models import Student
 # Create your views here.
 def index(request):
     return render(request, 'index.html', {
-        'Student': Student.objects.all(),
+        'students': Student.objects.all(),
     })
