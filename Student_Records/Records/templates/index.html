@@ -63,7 +63,10 @@
                                                     <td>{{ student.phone_number }}</td>
                                                     <td>{{ student.location }}</td>
                                                     <td>{{ student.hobby }}</td>
-                                                    <td>ACTIONS</td>
+                                                    <td>
+                                                        <button class="btn btn-warning text-black me-1" type="button" href="{% url 'view_student' student.id %}" data-bs-toggle="modal"
+                                                        data-bs-target="#myModal{{student.id}}">Edit</button>
+                                                    </td>
                                                 </tr>
                                                 {% endfor %}
                                             </tbody>
@@ -77,6 +80,10 @@
                         {% endif %}
                     </div>
                 </div>
+            </div>
+            <div class="m-3 mb-4 ms-4 me-4">
+                <button type="button" class="btn btn-primary">Download CSV</button>
+                <button type="button" class="btn btn-success">Add Item</button>
             </div>
             <footer class="mt-auto mb-4">
                 <div class="text-center">
