@@ -64,8 +64,37 @@
                                                     <td>{{ student.location }}</td>
                                                     <td>{{ student.hobby }}</td>
                                                     <td>
-                                                        <button class="btn btn-warning text-black me-1" type="button" href="{% url 'view_student' student.id %}" data-bs-toggle="modal"
+                                                    <button class="btn btn-warning text-black me-1" type="button" href="{% url 'view_student' student.id %}" data-bs-toggle="modal"
                                                         data-bs-target="#myModal{{student.id}}">Edit</button>
+                                                        
+                                                    <div class="modal" id="myModal{{student.id}}" tabindex="-1" aria-labelledby="myModallabel1" aria-hidden="true">
+                                                        <div class="modal-dialog" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title"> 
+                                                                        Student: {{ student.first_name}} {{ student.last_name}}
+                                                                    </h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true"></span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    <ul class="list-unstyled">
+                                                                        <li>First Name: {{ student.first_name }}</li>
+                                                                        <li>Last Name: {{ student.last_name }}</li>
+                                                                        <li>Age: {{ student.student_age }}</li>
+                                                                        <li>Email: {{ student.email }}</li>
+                                                                        <li>Phone: {{ student.phone_number }}</li>
+                                                                        <li>Location: {{ student.location }}</li>
+                                                                        <li>Hobby: {{ student.hobby }}</li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     </td>
                                                 </tr>
                                                 {% endfor %}
